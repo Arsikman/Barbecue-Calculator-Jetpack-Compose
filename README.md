@@ -1,4 +1,4 @@
-# Barbecue Calculator | Jetpack Compose
+# Barbecue Calculator | Jetpack Compose test
 ## This is an android mobile app called "Barbecue Calculator" that was made for training purposes.
 ### Language: Kotlin
 

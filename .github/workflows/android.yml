@@ -24,6 +24,10 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Authenticate in Firebase
+      run: |
+        echo $FIREBASE_TOKEN | base64 --decode > $HOME/.firebase-token
+        firebase login --no-localhost --token $(cat $HOME/.firebase-token)
     - name: Distribute apk to the Firebase
       run: |
         ls -la app/build/outputs/apk/debug

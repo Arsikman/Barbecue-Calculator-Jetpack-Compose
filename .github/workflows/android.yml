@@ -24,3 +24,9 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Distribute apk to the Firebase
+      run: |
+        ls -la app/build/outputs/apk/debug
+        sudo apt-get install -y curl
+        curl -sL https://firebase.tools | bash
+        firebase appdistribution:distribute --app com.my.shashlik --groups testers --apk app/build/outputs/apk/debug/app-debug.apk

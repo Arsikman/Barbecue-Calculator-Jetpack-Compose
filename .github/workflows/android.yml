@@ -29,5 +29,5 @@ jobs:
         ls -la app/build/outputs/apk/debug
         sudo apt-get install -y curl
         curl -sL https://firebase.tools | bash
-        firebase login --no-localhost --token $FIREBASE_TOKEN
+        firebase login --no-localhost --token ${{ secrets.FIREBASE_TOKEN }}
         firebase appdistribution:distribute --app com.my.shashlik --groups testers app/build/outputs/apk/debug/app-debug.apk
